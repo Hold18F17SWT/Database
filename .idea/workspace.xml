@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89581e82-0ce9-4a46-8640-98107a51e735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/daoimpl01917/MySQLProduktBatchDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/daoimpl01917/MySQLProduktBatchKompDAO.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/connector01917/Constant.java" afterPath="$PROJECT_DIR$/src/connector01917/Constant.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -203,6 +197,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -556,7 +555,7 @@
       <workItem from="1490689263136" duration="4026000" />
       <workItem from="1492686749457" duration="812000" />
       <workItem from="1493027614930" duration="9218000" />
-      <workItem from="1493234027287" duration="145000" />
+      <workItem from="1493234027287" duration="212000" />
     </task>
     <task id="LOCAL-00001" summary="added .gitignore">
       <created>1492687232083</created>
@@ -565,11 +564,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492687232083</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Did stuff">
+      <created>1493234209269</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1493234209269</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14201000" />
+    <option name="totallyTimeSpent" value="14268000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -664,8 +670,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="added .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added .gitignore" />
+    <MESSAGE value="Did stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
