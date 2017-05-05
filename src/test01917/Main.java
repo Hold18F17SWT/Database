@@ -1,10 +1,7 @@
 package test01917;
 
-import daoimpl01917.MySQLOperatoerDAO;
-import daoimpl01917.MySQLProduktBatchDAO;
-import daoimpl01917.MySQLProduktBatchKompDAO;
+import daoimpl01917.*;
 import daointerfaces01917.DALException;
-import daointerfaces01917.ProduktBatchKompDAO;
 import dto01917.*;
 
 import java.sql.SQLException;
@@ -61,7 +58,7 @@ public class Main {
 
 		System.out.println("Operatoer nummer 5:");
 		try { System.out.println(opr.getOperatoer(5)); }
-		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
+		catch (DALException e) { System.out.println(e.getMessage()); }
 	}
 
 	private static void testMySQLProduktBatchDAO() {
@@ -73,7 +70,7 @@ public class Main {
 		System.out.println("Indsaettelse af nyt produkt batch med pb_id 6, status 2 og receptid 3");
 		ProduktBatchDTO pbDTO = new ProduktBatchDTO(6,2,3);
 		try { pb.createProduktBatch(pbDTO); }
-		catch (DALException e) { System.out.println(e.getMessage()); ec++;}
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 
 		System.out.println("Returner info fra produktbatch med id = 2");
 		try { System.out.println(pb.getProduktBatch(2)); }
@@ -85,33 +82,53 @@ public class Main {
 		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 
 		System.out.println("Henter en liste af produktbatches");
-		try { pb.getProduktBatchList(); }
+		try { System.out.println(pb.getProduktBatchList()); }
 		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 	}
 
 	private static void testProduktBatchKompDAO () {
-		//MySQLProduktBatchKompDAO pbk = new MySQLProduktBatchKompDAO();
+		MySQLProduktBatchKompDAO pbk = new MySQLProduktBatchKompDAO();
 
-		//System.out.println("Opret ny produktbatch komponent");
-		//ProduktBatchKompDTO pbkd = new ProduktBatchKompDTO('');
-		//try { pbk.createProduktBatchKomp(); }
-		//catch (DALException e) { System.out.println(e.getMessage()); ec++; }
+		System.out.println("Opretter ny produktbatch komponent");
+		ProduktBatchKompDTO pbkd = new ProduktBatchKompDTO(5, 2, 0.5, 1.99, 2);
+		try { pbk.createProduktBatchKomp(pbkd); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 
+		System.out.println("Henter produktbatch komponent");
+		try { System.out.println(pbk.getProduktBatchKomp(1,4)); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
+
+		System.out.println("Henter liste over produktbatch komponenter");
+		try { System.out.println(pbk.getProduktBatchKompList()); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
+
+		System.out.println("Henter listen over produktbatch komponenter med id 3");
+		try { System.out.println(pbk.getProduktBatchKompList(3)); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
+
+		System.out.println("Opdaterer operator ID på produktbatch komponent 5 til 4");
+		pbkd.setOprId(4);
+		try { pbk.updateProduktBatchKomp(pbkd); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 	}
 
 	private static void testRaavareBatchDAO () {
+		MySQLRaavareBatchDAO rabd = new MySQLRaavareBatchDAO();
 
 	}
 
 	private static void testRaavareDAO () {
+		MySQLRaavareDAO rad = new MySQLRaavareDAO();
 
 	}
 
 	private static void testReceptDAO () {
+		MySQLReceptDAO red = new MySQLReceptDAO();
 
 	}
 
 	private static void testReceptKompDAO () {
+		MySQLReceptKompDAO rekd = new MySQLReceptKompDAO();
 
 	}
 }
