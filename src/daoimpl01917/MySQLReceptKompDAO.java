@@ -12,19 +12,19 @@ import daointerfaces01917.ReceptKompDAO;
 import dto01917.ReceptKompDTO;
 
 public class MySQLReceptKompDAO implements ReceptKompDAO{
-    public ReceptKompDTO getReceptKomp(int receptkompId, int raavareId) throws DALException {
-        ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recept_id = " + receptkompId + "AND raavare_id = " + raavareId);
+    public ReceptKompDTO getReceptKomp(int receptId, int raavareId) throws DALException {
+        ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recept_id = " + receptId + "AND raavare_id = " + raavareId);
         try {
-            if (!rs.first()) throw new DALException("receptkomponent med Recept ID " + receptkompId + ", der indeholder Raavare ID" + raavareId + " findes ikke");
+            if (!rs.first()) throw new DALException("receptkomponent med Recept ID " + receptId + ", der indeholder Raavare ID" + raavareId + " findes ikke");
             return new ReceptKompDTO (rs.getInt("recept_id"), rs.getInt("raavare_id"), rs.getDouble("nom_netto"), rs.getInt("tolerance"));
         }
         catch (SQLException e) {throw new DALException(e); }
     }
 
     @Override
-    public List<ReceptKompDTO> getReceptKompList(int receptkompId) throws DALException {
+    public List<ReceptKompDTO> getReceptKompList(int receptId) throws DALException {
         List<ReceptKompDTO> list = new ArrayList<ReceptKompDTO>();
-        ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recept_id = " + receptkompId);
+        ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recept_id = " + receptId);
         try
         {
             while (rs.next())
