@@ -25,7 +25,7 @@ public class Main {
 		testReceptDAO();
 		testReceptKompDAO();
 
-		System.out.println("\nAntal exceptions kastet: " + ec);
+		System.out.println("\nForventet antal exceptions kastet = 7 \nAntal exceptions kastet: " + ec);
 	}
 
 	private static void testMySQLOperatorDAO() {
@@ -59,7 +59,7 @@ public class Main {
 
 		System.out.println("Henter operatoer nummer 5");
 		try { System.out.println(opr.getOperatoer(5)); }
-		catch (DALException e) { System.out.println(e.getMessage()); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 	}
 
 	private static void testMySQLProduktBatchDAO() {
@@ -164,8 +164,8 @@ public class Main {
 		catch (DALException e) { System.out.println(e.getMessage());ec++; }
 
 		System.out.println("Henter raavare nummer 9");
-		try { System.out.println(rad.getRaavare(5)); }
-		catch (DALException e) { System.out.println(e.getMessage()); }
+		try { System.out.println(rad.getRaavare(9)); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 	}
 
 	private static void testRaavareBatchDAO () {
@@ -233,7 +233,7 @@ public class Main {
 
 		System.out.println("Henter recept nummer 5");
 		try { System.out.println(red.getRecept(5)); }
-		catch (DALException e) { System.out.println(e.getMessage()); }
+		catch (DALException e) { System.out.println(e.getMessage()); ec++; }
 	}
 
 	private static void testReceptKompDAO () {
