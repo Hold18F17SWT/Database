@@ -25,7 +25,7 @@ public class MySQLOperatoerDAO implements OperatoerDAO {
 	public void createOperatoer(OperatoerDTO opr) throws DALException {		
 			Connector.doUpdate(
 				"INSERT INTO operatoer(opr_id, opr_navn, ini, cpr, password) VALUES " +
-				"(" + opr.getOprId() + ", '" + opr.getOprNavn() + "', '" + opr.getIni() + "', '" + 
+				"('" + opr.getOprId() + "', '"+ opr.getOprNavn() + "', '" + opr.getIni() + "', '" +
 				opr.getCpr() + "', '" + opr.getPassword() + "')"
 			);
 	}
@@ -51,7 +51,5 @@ public class MySQLOperatoerDAO implements OperatoerDAO {
 		catch (SQLException e) { throw new DALException(e); }
 		return list;
 	}
-		
-		
 }
 	
