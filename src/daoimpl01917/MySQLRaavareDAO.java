@@ -13,7 +13,7 @@ import dto01917.RaavareDTO;
 
 public class MySQLRaavareDAO implements RaavareDAO{
     public RaavareDTO getRaavare(int raavareId) throws DALException {
-        ResultSet rs = Connector.doQuery("SELECT * FROM raavarebatch WHERE raavare_id = " + raavareId);
+        ResultSet rs = Connector.doQuery("SELECT * FROM raavare WHERE raavare_id = " + raavareId + ";");
         try {
             if (!rs.first()) throw new DALException("raavare med Raavare ID " + raavareId + " findes ikke");
             return new RaavareDTO (rs.getInt("raavare_id"), rs.getString("raavare_navn"), rs.getString("leverandoer"));

@@ -13,7 +13,7 @@ import dto01917.ReceptKompDTO;
 
 public class MySQLReceptKompDAO implements ReceptKompDAO{
     public ReceptKompDTO getReceptKomp(int receptId, int raavareId) throws DALException {
-        ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recept_id = " + receptId + "AND raavare_id = " + raavareId);
+        ResultSet rs = Connector.doQuery("SELECT * FROM receptkomponent WHERE recept_id = " + receptId + " AND raavare_id = " + raavareId + ";");
         try {
             if (!rs.first()) throw new DALException("receptkomponent med Recept ID " + receptId + ", der indeholder Raavare ID" + raavareId + " findes ikke");
             return new ReceptKompDTO (rs.getInt("recept_id"), rs.getInt("raavare_id"), rs.getDouble("nom_netto"), rs.getInt("tolerance"));
